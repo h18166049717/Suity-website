@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+
+		<jsp:useBean id="Del" class="mongo.mongoConnect" scope="page" />
+		<% Del.dbConnect("goods"); Del.collectConnect("goodsData"); String IDCode=request.getParameter("IDCode");
+			Del.collectDele("GoodsCode", IDCode); response.setHeader("refresh", "1;url=cart.jsp" ); %>
+	</body>
+
+	</html>
